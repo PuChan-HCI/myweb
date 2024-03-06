@@ -6,17 +6,17 @@ The following records the activities of the seminars, such as basics of computer
 
 The code in this repository can be run on Google Colaboratory. If you want to reduce the time it takes to train a neural network, you can simply connect Google Colaboratory to your local runtime. Below is how to setup your local server.
 ```
-conda create -n colab
-# Install Google Colaboratory
-pip install colab
-
-# Fix the library
-pip uninstall scikit-learn -y
-pip uninstall pandas -y
+conda create -n colab python=3.8.3
+conda activate colab
 pip install -U scikit-learn==1.2.2 --user
 pip install albumentations==1.3.1 --user
 pip install pandas==1.5.3 --user
 pip install segmentation-models-pytorch --users
+pip install opencv-python==4.8.0.76
+pip install matplotlib
+pip install seaborn
+[gpu/cuda]
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
 
 Run notebook and copy the URLs
