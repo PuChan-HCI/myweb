@@ -47,6 +47,7 @@
               <li><a href="https://puchan-hci.github.io/myweb/course-details.html">Pytorch</a></li>
               <li><a href="https://puchan-hci.github.io/myweb/course-details.html">OpenMMlab</a></li>
               <li><a href="https://puchan-hci.github.io/myweb/course-details.html">OpenCV</a></li>
+              <li><a href="https://puchan-hci.github.io/myweb/course-colabo.html">Google Colaboratory</a></li>
             </ul>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -78,12 +79,11 @@
             <img src="assets/img/course-details.jpg" class="img-fluid" alt="">
             <h3>Deep Learning with PyTorch</h3>
             <p>
-              Our goal with PyTorch was to build the most flexible framework possible to express
-              deep learning algorithms. It is hard to attribute the success of PyTorch to a single factor. The project offers a
-              good user experience and enhanced debuggability and flexibility, ultimately making
-              users more productive. The huge adoption of PyTorch has resulted in a beautiful ecosystem
-              of software and research built on top of it, making PyTorch even richer in its
-              experience.
+              Google Colab is essentially a Jupyter notebook that runs in the cloud. 
+              You can write and execute code, and the results are displayed within the notebook. 
+              Google Colab offers free access to a graphics processing unit (GPU), which is 
+              particularly useful for training deep learning models due to their parallel 
+              processing capabilities.
             </p>
           </div>
           <div class="col-lg-4">
@@ -122,22 +122,13 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">01. Tensor</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">01. Let's start</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">02. ResNet</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">02. Uploading Files</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">03. AlexNet</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">04. Transfer Learning</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">05. DL from Scratch</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-6">06. Semantic Segmentation</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">03. Full Tutorial</a>
               </li>
             </ul>
           </div>
@@ -146,12 +137,11 @@
               <div class="tab-pane active show" id="tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>It starts with a tensor</h3>
-                    <p class="fst-italic">The process begins by converting our input into floating-point numbers.</p>
-                    <p>Since floating-point numbers are the way a network deals with information, we need a way to encode 
-                      real-world data of the kind we want to process into something digestible by a network and then 
-                      decode the output back to something we can understand and use for our purpose</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/01_It_start_with_a_tensor.ipynb" class="get-started-btn">Start to learn Tensor</a>
+                    <h3>It's in the cloud</h3>
+                    <p class="fst-italic"> Google Colab runs in the cloud, there’s no installation required. </p>
+                    <p>Go to Google Colab and sign in with your Google account. Create a New Notebook: Once you’re
+                       on the Google Colab interface, click on File > New notebook to create a new notebook.</p>
+                    <a href="https://colab.research.google.com/" class="get-started-btn">Go to Google Colab</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/course-details-tab-1.png" alt="" class="img-fluid">
@@ -161,12 +151,12 @@
               <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Pretrained networks::ResNet101</h3>
-                    <p class="fst-italic">Just use the existing models to inference.</p>
-                    <p>We are going to learn how to use the work of the best researchers in the field by downloading 
-                      and running very interesting models that have already been trained on open, large-scale datasets. 
-                      The predefined models can be found in torchvision.models.</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/02_Using_Pre_Trained_Networks_ResNet.ipynb" class="get-started-btn">Start to learn ResNet101</a>
+                    <h3>Uploading Files to Google Colab</h3>
+                    <p class="fst-italic">You need to know how to upload files to Google Colab for processing data.</p>
+                    <p>You can use either the File Browser or Code to upload files. In the File Browser, click on the 
+                       folder icon to open the file browser. You can upload files by clicking on the upload icon. 
+                       You can also use code to upload files (i.e. uploaded = files.upload). </p>
+                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/02_Using_Pre_Trained_Networks_ResNet.ipynb" class="get-started-btn">Uploading Files</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/course-details-tab-2.png" alt="" class="img-fluid">
@@ -176,58 +166,16 @@
               <div class="tab-pane" id="tab-3">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Pretrained networks::AlexNet</h3>
-                    <p class="fst-italic">Just use the existing models to inference.</p>
-                    <p>We are going to learn how to use the work of the best researchers in the field by downloading 
-                      and running very interesting models that have already been trained on open, large-scale datasets. 
-                      The predefined models can be found in torchvision.models.</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/02_Using_Pre_Trained_Networks_AlexNet.ipynb" class="get-started-btn">Start to learn AlexNet</a>
+                    <h3>Other Tutorials</h3>
+                    <p class="fst-italic">Google Colab Tutorial</p>
+                    <p>This tutorial gives an exhaustive coverage of all the features of Colab and makes you 
+                      comfortable working on it with confidence. Before you start practicing various types of 
+                      examples given in this tutorial, we assume that you are already aware about Jupyter, 
+                      GitHub, basics of Python and other computer programming languages.</p>
+                    <a href="https://www.tutorialspoint.com/google_colab/index.htm" class="get-started-btn">Go to TutorialPoint</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/course-details-tab-3.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Transfer Learning</h3>
-                    <p class="fst-italic">A fast way to create NN-model.</p>
-                    <p>You can apply transfer learning, a process of fine-tune pretrained models with a much smaller 
-                      dataset of new images.</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/03_Transfer_Learning.ipynb" class="get-started-btn">Transfer Learning</a>
-                    
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/course-details-tab-4.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-5">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Deep Learning from Scratch</h3>
-                    <p class="fst-italic">Build and visualize your Layers</p>
-                    <p>One of the best things to learn is to gradually build up the momentum from theory to practice. Another key feature is that this article attempts to explain advanced theoretical concepts.</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/04_Deep_Learning_for_Computer_Vision.ipynb" class="get-started-btn">DL from Scratch</a>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/course-details-tab-5.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-
-              <div class="tab-pane" id="tab-6">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Semantic Segmentation</h3>
-                    <p class="fst-italic">Interpreting visual information</p>
-                    <p>The goal of semantic segmentation is to identify collections of pixels and classify them based on various characteristics.
-Unlike other segmentation tasks, semantic segmentation assigns a semantic class label to every single pixel in an image.</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/04_Deep_Learning_for_Computer_Vision.ipynb" class="get-started-btn">Semantic Segmentation</a>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/course-details-tab-6.png" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
