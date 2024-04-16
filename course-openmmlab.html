@@ -45,7 +45,7 @@
           <li class="dropdown"><a href="https://puchan-hci.github.io/myweb/courses.html"><span>Courses</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="https://puchan-hci.github.io/myweb/course-details.html">Pytorch</a></li>
-              <li><a href="https://puchan-hci.github.io/myweb/course-details.html">OpenMMlab</a></li>
+              <li><a href="https://puchan-hci.github.io/myweb/course-openmmlab.html">OpenMMlab</a></li>
               <li><a href="https://puchan-hci.github.io/myweb/course-details.html">OpenCV</a></li>
               <li><a href="https://puchan-hci.github.io/myweb/course-colabo.html">Google Colaboratory</a></li>
             </ul>
@@ -66,7 +66,7 @@
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
         <h2>Course Details</h2>
-        <p>Google Colaboratory -- Learn & Implement </p>
+        <p>OpenMMLab -- Learn & Implement </p>
       </div>
     </div><!-- End Breadcrumbs -->
 
@@ -76,14 +76,15 @@
 
         <div class="row">
           <div class="col-lg-8">
-            <img src="assets/img/course-details.jpg" class="img-fluid" alt="">
-            <h3>Programming with Google Colaboratory</h3>
+            <img src="assets/img/openmmlab.jpg" class="img-fluid" alt="">
+            <h3>Deep Learning with OpenMMLab</h3>
             <p>
-              Google Colab is essentially a Jupyter notebook that runs in the cloud. 
-              You can write and execute code, and the results are displayed within the notebook. 
-              Google Colab offers free access to a graphics processing unit (GPU), which is 
-              particularly useful for training deep learning models due to their parallel 
-              processing capabilities.
+              OpenMMLab builds the most influential open-source computer vision algorithm 
+              system in the deep learning era. Based on PyTorch, OpenMMLab develops MMEngine 
+              to provide universal training and evaluation engine, and MMCV to provide neural 
+              network operators and data transforms, which serves as a foundation of the whole 
+              project. Since the initial release in October 2018, OpenMMLab has released 30+ 
+              vision libraries, has implemented 300+ algorithms, and contains 2000+ pre-trained models.
             </p>
           </div>
           <div class="col-lg-4">
@@ -122,13 +123,13 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">01. Let's start</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">01. MMDetection</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">02. Uploading Files</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">02. Mask-RCNN</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">03. Full Tutorial</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">03. MMSegmentation</a>
               </li>
             </ul>
           </div>
@@ -137,11 +138,11 @@
               <div class="tab-pane active show" id="tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>It's in the cloud</h3>
-                    <p class="fst-italic"> Google Colab runs in the cloud, there’s no installation required. </p>
-                    <p>Go to Google Colab and sign in with your Google account. Create a New Notebook: Once you’re
-                       on the Google Colab interface, click on File > New notebook to create a new notebook.</p>
-                    <a href="https://colab.research.google.com/" class="get-started-btn">Go to Google Colab</a>
+                    <h3>Detect and Classify</h3>
+                    <p class="fst-italic"> MMDetection is an open source object detection toolbox based on PyTorch. 
+                      It is a part of the OpenMMLab project.Now, pre-trained weights for MM-Grounding-DINO Swin-B and Swin-L
+                      have been released. </p>
+                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/openmmlab/MMDet_Tutorial.ipynb">Go to MMDetection</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/course-details-tab-1.png" alt="" class="img-fluid">
@@ -151,12 +152,14 @@
               <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Uploading Files to Google Colab</h3>
-                    <p class="fst-italic">You need to know how to upload files to Google Colab for processing data.</p>
-                    <p>You can use either the File Browser or Code to upload files. In the File Browser, click on the 
-                       folder icon to open the file browser. You can upload files by clicking on the upload icon. 
-                       You can also use code to upload files (i.e. uploaded = files.upload). </p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/colabo/UploadFiles.ipynb" class="get-started-btn">Uploading Files</a>
+                    <h3>Mask-RCNN</h3>
+                    <p class="fst-italic">The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for 
+                      predicting an object mask in parallel with the existing branch for bounding box recognition. 
+                      Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. 
+                      Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human 
+                      poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, 
+                      including instance segmentation, bounding-box object detection, and person keypoint detection.</p>
+                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/openmmlab/Mask_R_CNN_Det_Tutorial.ipynb" class="get-started-btn">Uploading Files</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/course-details-tab-2.png" alt="" class="img-fluid">
@@ -166,12 +169,11 @@
               <div class="tab-pane" id="tab-3">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Other Tutorials</h3>
+                    <h3>MMSegmentation</h3>
                     <p class="fst-italic">Google Colab Tutorial</p>
-                    <p>This tutorial gives an exhaustive coverage of all the features of Colab and makes you 
-                      comfortable working on it with confidence. Before you start practicing various types of 
-                      examples given in this tutorial, we assume that you are already aware about Jupyter, 
-                      GitHub, basics of Python and other computer programming languages.</p>
+                    <p>MMSegmentation is an open source semantic segmentation toolbox based on PyTorch. 
+                      It is a part of the OpenMMLab project. MMSegmentation v1.x brings remarkable 
+                      improvements over the 0.x release, offering a more flexible and feature-packed experience. </p>
                     <a href="https://www.tutorialspoint.com/google_colab/index.htm" class="get-started-btn">Go to TutorialPoint</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
