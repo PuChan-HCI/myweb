@@ -77,14 +77,24 @@
         <div class="row">
           <div class="col-lg-8">
             <img src="assets/img/course-details.jpg" class="img-fluid" alt="">
-            <h3>Deep Learning with PyTorch</h3>
+            <h3>Learning OpenCV</h3>
             <p>
-              Our goal with PyTorch was to build the most flexible framework possible to express
-              deep learning algorithms. It is hard to attribute the success of PyTorch to a single factor. The project offers a
-              good user experience and enhanced debuggability and flexibility, ultimately making
-              users more productive. The huge adoption of PyTorch has resulted in a beautiful ecosystem
-              of software and research built on top of it, making PyTorch even richer in its
-              experience.
+              OpenCV (Open Source Computer Vision Library) is an open source computer 
+              vision and machine learning software library. OpenCV was built to provide 
+              a common infrastructure for computer vision applications and to accelerate 
+              the use of machine perception in the commercial products. Being an Apache 2 
+              licensed product, OpenCV makes it easy for businesses to utilize and modify 
+              the code.
+              The library has more than 2500 optimized algorithms, which includes a comprehensive 
+              set of both classic and state-of-the-art computer vision and machine learning algorithms. 
+              These algorithms can be used to detect and recognize faces, identify objects, classify 
+              human actions in videos, track camera movements, track moving objects, extract 3D models 
+              of objects, produce 3D point clouds from stereo cameras, stitch images together to produce 
+              a high resolution image of an entire scene, find similar images from an image database, 
+              remove red eyes from images taken using flash, follow eye movements, recognize scenery and 
+              establish markers to overlay it with augmented reality, etc. OpenCV has more than 47 thousand 
+              people of user community and estimated number of downloads exceeding 18 million. The library 
+              is used extensively in companies, research groups and by governmental bodies.
             </p>
           </div>
           <div class="col-lg-4">
@@ -123,13 +133,13 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">01. Tensor</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">01. Sampling & Quantization</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">02. ResNet</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">02. Spatial Analysis</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">03. AlexNet</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">03. Image Geometry</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-4">04. Transfer Learning</a>
@@ -147,12 +157,14 @@
               <div class="tab-pane active show" id="tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>It starts with a tensor</h3>
-                    <p class="fst-italic">The process begins by converting our input into floating-point numbers.</p>
-                    <p>Since floating-point numbers are the way a network deals with information, we need a way to encode 
-                      real-world data of the kind we want to process into something digestible by a network and then 
-                      decode the output back to something we can understand and use for our purpose</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/01_It_start_with_a_tensor.ipynb" class="get-started-btn">Start to learn Tensor</a>
+                    <h3>Digitization</h3>
+                    <p class="fst-italic">In Digital Image Processing, signals captured from the physical 
+                      world need to be translated into digital form by “Digitization” Process. In order to 
+                      become suitable for digital processing, an image function f(x,y) must be digitized both 
+                      spatially and in amplitude. This digitization process involves two main processes called
+                      Sampling: Digitizing the co-ordinate value is called sampling. Quantization: Digitizing 
+                      the amplitude value is called quantization</p>
+                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/MediaSystem/ImageProcessing01.ipynb" class="get-started-btn">Start to "Digitization"</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/course-details-tab-1.png" alt="" class="img-fluid">
@@ -162,12 +174,12 @@
               <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Pretrained networks::ResNet101</h3>
-                    <p class="fst-italic">Just use the existing models to inference.</p>
-                    <p>We are going to learn how to use the work of the best researchers in the field by downloading 
-                      and running very interesting models that have already been trained on open, large-scale datasets. 
-                      The predefined models can be found in torchvision.models.</p>
-                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/DeepLearning-with-Pytorch/02_Using_Pre_Trained_Networks_ResNet.ipynb" class="get-started-btn">Start to learn ResNet101</a>
+                    <h3>Convolution, Binarization & Halftoning</h3>
+                    <p class="fst-italic">In image processing, a kernel, convolution matrix, or mask is a small matrix 
+                      used for blurring, sharpening, embossing, edge detection, and more. This is done by performing a 
+                      convolution between the kernel and an image. More simply, if each pixel in the output image is a 
+                      function of the nearby pixels (including itself) in the input image, the kernel is that function..</p>
+                    <a href="https://colab.research.google.com/github/PuChan-HCI/myweb/blob/main/MediaSystem/ImageProcessing02.ipynb" class="get-started-btn">Spatial Analysis</a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/course-details-tab-2.png" alt="" class="img-fluid">
@@ -177,7 +189,7 @@
               <div class="tab-pane" id="tab-3">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Pretrained networks::AlexNet</h3>
+                    <h3>Image Geometry</h3>
                     <p class="fst-italic">Just use the existing models to inference.</p>
                     <p>We are going to learn how to use the work of the best researchers in the field by downloading 
                       and running very interesting models that have already been trained on open, large-scale datasets. 
