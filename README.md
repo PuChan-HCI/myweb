@@ -15,8 +15,8 @@ pip install segmentation-models-pytorch
 pip install opencv-python==4.8.0.76
 pip install matplotlib
 pip install seaborn
-conda install conda-forge::google-colab
-pip install chardet
+pip install torchsummary
+
 [gpu/cuda]
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
