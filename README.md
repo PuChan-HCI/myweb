@@ -3,6 +3,7 @@ The following records the activities of the seminars, such as basics of computer
 - Pytorch for dummies
 - OpenCV for beginners
 - Object detection & Segmentattion with OpenMMlab
+- Tutorials (for students)
 
 The code in this repository can be run on Google Colaboratory. If you want to reduce the time it takes to train a neural network, you can simply connect Google Colaboratory to your local runtime. Below is how to setup your local server.
 ```
