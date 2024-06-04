@@ -9,7 +9,8 @@ The code in this repository can be run on Google Colaboratory. If you want to re
 ```
 conda create -n colab python=3.8.3
 conda activate colab
-pip install -U scikit-learn==1.2.2 --user
+#pip install -U scikit-learn==1.2.2 --user
+pip install -U scikit-learn
 pip install albumentations==1.3.1 --user
 pip install pandas==1.5.3 --user
 pip install segmentation-models-pytorch
@@ -17,6 +18,12 @@ pip install opencv-python==4.8.0.76
 pip install matplotlib
 pip install seaborn
 pip install torchsummary
+pip install tensorboard
+
+[for Ubuntu add below]
+pip install jupyterlab
+pip install notebook
+pip install pickleshare
 
 [gpu/cuda]
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
