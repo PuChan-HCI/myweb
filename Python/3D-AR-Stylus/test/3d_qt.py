@@ -1,0 +1,53 @@
+import pyqtgraph as pg
+import pyqtgraph.opengl as gl
+from numpy import *
+from PyQt5 import QtWidgets
+
+# Call below first
+app= QtWidgets.QApplication([])
+
+# Define Z
+pi=3.1415
+X=linspace(-10,10,100)
+Y1=2+sin(X)
+Y2=-2+Y1*Y1
+Y3=cos(1*Y1)/(X+0.0131415)
+Z=exp(-0.1*X*X)*cos(0.3*(X.reshape(100,1)**2+X.reshape(1,100)**2))
+
+# View widget
+widget = gl.GLViewWidget()
+
+# Draw Grid
+gx = gl.GLGridItem()
+gx.rotate(90, 0, 1, 0)
+gx.translate(-10, 0, 0)
+widget.addItem(gx)
+gy = gl.GLGridItem()
+gy.rotate(90, 1, 0, 0)
+gy.translate(0, -10, 0)
+widget.addItem(gy)
+gz = gl.GLGridItem()
+gz.translate(0, 0, -10)
+widget.addItem(gz)
+
+# Scatter plot
+Z=zeros(size(X))
+p=array([X,Y2,Z])
+p=p.transpose()
+C=pg.glColor('b')   # Blue
+point3d = gl.GLScatterPlotItem(pos=p, color=C)
+widget.addItem(point3d)
+
+# Line plot
+# Z=zeros(size(X))
+q=array([X,Z,Y3])
+q=q.transpose()
+C=pg.glColor('r')   # Red
+line3d = gl.GLLinePlotItem(pos=q, width=1, color=C, antialias=False)
+widget.addItem(line3d)
+widget.show()
+
+QtWidgets.QApplication.exec_()
+# または
+# if __name__ == '__main__':
+#     pg.exec()
