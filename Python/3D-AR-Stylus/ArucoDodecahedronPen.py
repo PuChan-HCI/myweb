@@ -157,7 +157,7 @@ def main():
                         pen_tip_loc_world = rotation_matrix @ pen_tip_loc + tvecs_global
                         ax.scatter3D(-pen_tip_loc_world[0],-pen_tip_loc_world[1],-pen_tip_loc_world[1])
                         plt.ioff()  # Turn off interactive mode
-            plt.show(block=False)
+                    plt.show(block=False)
 
         cv2.imshow('org', frame)
         key = cv2.waitKey(50)
