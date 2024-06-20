@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import mpl_toolkits.mplot3d.art3d as art3d
 
 # data = pd.read_csv('Dodecahedron_org.csv')    # Original annotation
-data = pd.read_csv('Dodecahedron_final.csv')    # Modified annotation (adjusted to each marker)
+data = pd.read_csv('model_points.csv')    # Modified annotation (adjusted to each marker)
 row, column = data.shape        # Check the number of row & column
 
 # Create a 3D scatter plot
