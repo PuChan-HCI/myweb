@@ -35,6 +35,8 @@ function draw() {
     // そのままでは逆さなので上下を逆にする
     rotateZ(180);
     rotateY(angle * 1.3);
+
+    
     // サルを描画
     model(monkey);
     pop();
