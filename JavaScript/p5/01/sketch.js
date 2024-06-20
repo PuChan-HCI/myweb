@@ -1,19 +1,20 @@
+let capture;
+
 function setup() {
   
   // Set the canvas' width and height
   // using the browser's dimensions.
   createCanvas(windowWidth, windowHeight);
-  background(0)
+
+  // Capture (webcam)
+  capture = createCapture(VIDEO);
+  capture.size(320, 240);
+
 }
 
 function draw() {
-  background(0)
-  // if (mouseIsPressed) {
-  //   fill(255);
-  // } else {
-  //   fill(255,0,0);
-  // }
-  ellipse(mouseX, mouseY, 80, 80);
+  background(255);
+  Image(capture,windowWidth/2-capture.width/2, 100);
 }
 
 function mousePressed() {
