@@ -1,5 +1,5 @@
 let angle = 0;
-let monkey, pot;
+let monkey;
 
 function preload() {
     monkey = loadModel('monkey.obj');
@@ -27,7 +27,7 @@ function draw() {
         stroke(1);
     }
 
-    // monky
+    // monkey
     push();
     translate(-100, 0, 0);
     // 適度なサイズに拡大
