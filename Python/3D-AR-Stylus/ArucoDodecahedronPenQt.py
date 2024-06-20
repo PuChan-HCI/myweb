@@ -5,28 +5,9 @@ from cv2 import aruco
 import numpy as np
 import pandas as pd
 from collections import deque
-import matplotlib.pyplot as plt
-import pyqtgraph as pg
-import pyqtgraph.opengl as gl
-from PyQt5 import QtWidgets
-from array import array
+# import matplotlib.pyplot as plt
 
-# Call below first
-app= QtWidgets.QApplication([])
-# View widget
-widget = gl.GLViewWidget()
-# Draw Grid
-gx = gl.GLGridItem()
-gx.rotate(90, 0, 1, 0)
-gx.translate(-10, 0, 0)
-widget.addItem(gx)
-gy = gl.GLGridItem()
-gy.rotate(90, 1, 0, 0)
-gy.translate(0, -10, 0)
-widget.addItem(gy)
-gz = gl.GLGridItem()
-gz.translate(0, 0, -10)
-widget.addItem(gz)
+import util_draw
 
 # Open the webcam (built-in camera)
 cap = cv2.VideoCapture(0)
@@ -53,7 +34,6 @@ def estimatePoseLocal(corner, marker_size, cameraMatrix, distCoeffs):
                               [marker_size / 2, marker_size / 2, 0],
                               [marker_size / 2, -marker_size / 2, 0],
                               [-marker_size / 2, -marker_size / 2, 0]], dtype=np.float32)
-
     trash, rvecs, tvecs = cv2.solvePnP(marker_points, corner, cameraMatrix, distCoeffs, False, cv2.SOLVEPNP_ITERATIVE)
 
     return rvecs, tvecs, trash
@@ -63,16 +43,6 @@ def estimatePoseGlobal(model_points, image_points, cameraMatrix, distCoeffs):
     trash, rvecs, tvecs = cv2.solvePnP(model_points, image_points, cameraMatrix, distCoeffs, False, cv2.SOLVEPNP_ITERATIVE)
 
     return rvecs, tvecs, trash
-
-# # Create a live 3D scatter plot
-# # Pen tip (-0.014943, -65.6512, 85.2906) as being measured using Blender 3D
-# fig = plt.figure()
-# plt.ion()       # Turn on interactive mode
-# ax = fig.add_subplot(projection='3d')
-# # Adjust axes
-# ax.axes.set_xlim3d(-200,200)
-# ax.axes.set_ylim3d(-200,100)
-# ax.axes.set_zlim3d(bottom=-200, top=100)
 
 def main():
 
@@ -101,7 +71,7 @@ def main():
     model_points_3d_list = [list(ele) for ele in zip(*tmp2)]
 
     # Initialize the variable
-    global_pose = False
+    global_pose = True
     plot_pen_tip = False
 
     # Read a frame from the webcam
@@ -176,30 +146,35 @@ def main():
                     if plot_pen_tip:
                         pen_tip_loc = np.array([[-0.014943], [-65.6512], [85.2906]])    # 3x1 array
                         pen_tip_loc_world = rotation_matrix @ pen_tip_loc + tvecs_global
-                        p = array([-pen_tip_loc_world[0], -pen_tip_loc_world[0], -pen_tip_loc_world[0]])
-                        p = p.transpose()
-                        C = pg.glColor('b')  # Blue
-                        point3d = gl.GLScatterPlotItem(pos=p, color=C)
-                        widget.addItem(point3d)
-            #             ax.scatter3D(-pen_tip_loc_world[0],-pen_tip_loc_world[0],-pen_tip_loc_world[0])
-            #             plt.ioff()  # Turn off interactive mode
-            # plt.show(block=False)
-        widget.show()
+                        pen_tip_loc_world = pen_tip_loc_world/100
+                        # print('---------')
+                        # print(pen_tip_loc_world)
+                        # points = np.array((-pen_tip_loc_world[0],
+                        #                    -pen_tip_loc_world[1],
+                        #                    -pen_tip_loc_world[2]))
+                        # points = np.array((0,
+                        #                    0,
+                        #                    0))
+                        # points.transpose()
+                        # print(points)
+                        # print('-------')
+                        # print(pen_tip_loc_world[0])
+                        new_pen = np.transpose(pen_tip_loc_world)
+                        # print(pen_tip_loc_world.shape)
+                        print(new_pen)
+                        print(new_pen.shape)
+                        points = np.random.random(size=(1, 3))
+                        points *= [10, -10, 10]
+                        points[0] = (0, 0, 0)
+                        # points[0] = [-pen_tip_loc_world[0], -pen_tip_loc_world[1], -pen_tip_loc_world[2]]
+                        color = np.ones((new_pen.shape[0], 4))
+                        size = np.random.random(size=new_pen.shape[0]) * 30
 
-        cv2.imshow('org', frame)
-        key = cv2.waitKey(50)
-        if key == 27: # ESC
-            break
-        elif key == ord(' '):  # Space key to change between local/global pose estimation
-            global_pose = not global_pose
-        elif key == ord('p'):  # 'p' key to start/stop plotting
-            if global_pose:
-                plot_pen_tip = not plot_pen_tip
-        # elif key == ord('r'):  # 'r' key to reset the graph
-        #     plt.cla()
-        #     ax.axes.set_xlim3d(-200, 200)
-        #     ax.axes.set_ylim3d(-200, 100)
-        #     ax.axes.set_zlim3d(bottom=-200, top=100)
+                        util_draw.plot_dodecahedron(frame,new_pen,20)
+                        # ax.scatter3D(-pen_tip_loc_world[0],-pen_tip_loc_world[1],-pen_tip_loc_world[2])
+        global_pose, plot_pen_tip = util_draw.draw_image(frame)
+
+    cap.release()
 
 if __name__ == '__main__':
     try:
