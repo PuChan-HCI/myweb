@@ -52,6 +52,7 @@ ax = fig.add_subplot(projection='3d')
 ax.axes.set_xlim3d(-200,200)
 ax.axes.set_ylim3d(-200,100)
 ax.axes.set_zlim3d(bottom=-200, top=100)
+plt.pause(0.01)
 
 def main():
 
@@ -155,9 +156,10 @@ def main():
                     if plot_pen_tip:
                         pen_tip_loc = np.array([[-0.014943], [-65.6512], [85.2906]])    # 3x1 array
                         pen_tip_loc_world = rotation_matrix @ pen_tip_loc + tvecs_global
-                        ax.scatter3D(-pen_tip_loc_world[0],-pen_tip_loc_world[1],-pen_tip_loc_world[1])
+                        ax.scatter3D(-pen_tip_loc_world[0],-pen_tip_loc_world[1],-pen_tip_loc_world[2])
                         plt.ioff()  # Turn off interactive mode
-            plt.show(block=False)
+        plt.pause(0.001)
+        # plt.show(block=False)
 
         cv2.imshow('org', frame)
         key = cv2.waitKey(50)
