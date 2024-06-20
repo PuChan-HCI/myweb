@@ -56,7 +56,7 @@ def main():
     distCoeffs = np.array([[-0.03020035], [0.26274676], [0.00116514], [-0.00079586], [-0.461474]])
 
     # Read Dodecahedron 3D coordinates
-    data = pd.read_csv('Dodecahedron_final.csv')    # Modified annotation (adjusted to each marker)
+    data = pd.read_csv('model_points.csv')    # Modified annotation (adjusted to each marker)
     row, column = data.shape                        # Check the number of row & column
 
     # Put data into a 2D-list
@@ -146,32 +146,14 @@ def main():
                     if plot_pen_tip:
                         pen_tip_loc = np.array([[-0.014943], [-65.6512], [85.2906]])    # 3x1 array
                         pen_tip_loc_world = rotation_matrix @ pen_tip_loc + tvecs_global
-                        pen_tip_loc_world = pen_tip_loc_world/100
-                        # print('---------')
-                        # print(pen_tip_loc_world)
-                        # points = np.array((-pen_tip_loc_world[0],
-                        #                    -pen_tip_loc_world[1],
-                        #                    -pen_tip_loc_world[2]))
-                        # points = np.array((0,
-                        #                    0,
-                        #                    0))
-                        # points.transpose()
-                        # print(points)
-                        # print('-------')
-                        # print(pen_tip_loc_world[0])
+                        pen_tip_loc_world = pen_tip_loc_world/25
                         new_pen = np.transpose(pen_tip_loc_world)
-                        # print(pen_tip_loc_world.shape)
-                        print(new_pen)
-                        print(new_pen.shape)
-                        points = np.random.random(size=(1, 3))
-                        points *= [10, -10, 10]
-                        points[0] = (0, 0, 0)
-                        # points[0] = [-pen_tip_loc_world[0], -pen_tip_loc_world[1], -pen_tip_loc_world[2]]
-                        color = np.ones((new_pen.shape[0], 4))
-                        size = np.random.random(size=new_pen.shape[0]) * 30
-
+                        # Below is just for visualiization purposes
+                        x = -1.5*new_pen[0][0] -10
+                        y = -2.0*new_pen[0][1] 
+                        z =  1.5*new_pen[0][2] -20
+                        new_pen[0] = (x,z,y)
                         util_draw.plot_dodecahedron(frame,new_pen,20)
-                        # ax.scatter3D(-pen_tip_loc_world[0],-pen_tip_loc_world[1],-pen_tip_loc_world[2])
         global_pose, plot_pen_tip = util_draw.draw_image(frame)
 
     cap.release()

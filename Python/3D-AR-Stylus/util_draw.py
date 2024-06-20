@@ -95,20 +95,8 @@ def plot_dodecahedron(image, points, point_size):
     image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
     # img_flip = cv2.flip(img_rotate_90_clockwise, 0)
     img.setImage(image)
-    # Draw points
-    # sp2 = gl.GLScatterPlotItem(pos=points, color=(1, 1, 1, 1), size=1)
-
-    # pos = np.random.random(size=(10, 3))
-    # pos *= [10, -10, 10]
-    # # pos[0] = (0, 0, 0)
-    # # color = np.ones((pos.shape[0], 4))
-    # size = np.random.random(size=pos.shape[0]) * 30
     sp2 = gl.GLScatterPlotItem(pos=points, color=(1, 1, 1, 1), size=point_size)
-
     win.addItem(sp2)
-
-    # print(MyKey)
-
     win.show()
     pg.QtWidgets.QApplication.processEvents()
 
