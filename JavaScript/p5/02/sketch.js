@@ -3,8 +3,6 @@ let monkey, pot;
 
 function preload() {
     monkey = loadModel('monkey.obj');
-
-
 }
 
 function setup() {
@@ -39,15 +37,6 @@ function draw() {
     rotateY(angle * 1.3);
     // サルを描画
     model(monkey);
-    pop();
-
-    // pot
-    push();
-    translate(100, 20, 0);
-    scale(2);
-    rotateZ(180);
-    rotateY(angle * 1.3);
-    model(pot);
     pop();
 
     angle += 1;
