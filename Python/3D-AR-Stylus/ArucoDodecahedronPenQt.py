@@ -5,9 +5,7 @@ from cv2 import aruco
 import numpy as np
 import pandas as pd
 from collections import deque
-# import matplotlib.pyplot as plt
-
-import util_draw
+from utils import util_draw
 
 # Open the webcam (built-in camera)
 cap = cv2.VideoCapture(0)
@@ -56,7 +54,7 @@ def main():
     distCoeffs = np.array([[-0.03020035], [0.26274676], [0.00116514], [-0.00079586], [-0.461474]])
 
     # Read Dodecahedron 3D coordinates
-    data = pd.read_csv('model_points.csv')    # Modified annotation (adjusted to each marker)
+    data = pd.read_csv('markers/model_points_4x4.csv')    # Modified annotation (adjusted to each marker)
     row, column = data.shape                        # Check the number of row & column
 
     # Put data into a 2D-list

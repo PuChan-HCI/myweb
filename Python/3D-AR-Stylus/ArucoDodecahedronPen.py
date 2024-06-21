@@ -52,7 +52,7 @@ ax = fig.add_subplot(projection='3d')
 ax.axes.set_xlim3d(-200,200)
 ax.axes.set_ylim3d(-200,100)
 ax.axes.set_zlim3d(bottom=-200, top=100)
-plt.pause(0.01)
+plt.show(block=False)
 
 def main():
 
@@ -66,7 +66,7 @@ def main():
     distCoeffs = np.array([[-0.03020035], [0.26274676], [0.00116514], [-0.00079586], [-0.461474]])
 
     # Read Dodecahedron 3D coordinates
-    data = pd.read_csv('model_points.csv')    # Modified annotation (adjusted to each marker)
+    data = pd.read_csv('markers/model_points_4x4.csv')    # Modified annotation (adjusted to each marker)
     row, column = data.shape                        # Check the number of row & column
 
     # Put data into a 2D-list
@@ -158,8 +158,7 @@ def main():
                         pen_tip_loc_world = rotation_matrix @ pen_tip_loc + tvecs_global
                         ax.scatter3D(-pen_tip_loc_world[0],-pen_tip_loc_world[1],-pen_tip_loc_world[2])
                         plt.ioff()  # Turn off interactive mode
-        plt.pause(0.001)
-        # plt.show(block=False)
+                        plt.pause(0.05)
 
         cv2.imshow('org', frame)
         key = cv2.waitKey(50)

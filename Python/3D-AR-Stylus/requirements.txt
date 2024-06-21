@@ -1,0 +1,4 @@
+opencv-python
+pyqtgraph
+pyqt5
+pyopengl
