@@ -72,7 +72,7 @@ def main():
     detector, marker_size = setup_aruco()
 
     # Read Dodecahedron 3D coordinates --------------------
-    data = pd.read_csv('model_points.csv')    # Modified annotation (adjusted to each marker)
+    data = pd.read_csv('markers/model_points_4x4.csv')    # Modified annotation (adjusted to each marker)
     row, column = data.shape                        # Check the number of row & column
     # Put data into a 2D-list
     cols_to_combine = ['x', 'y', 'z']

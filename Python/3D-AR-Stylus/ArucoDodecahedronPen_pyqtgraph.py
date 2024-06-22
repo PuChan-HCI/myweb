@@ -5,7 +5,7 @@ from cv2 import aruco
 import numpy as np
 import pandas as pd
 from collections import deque
-import util_draw    # Draw using PyQtGraph
+from utils import util_draw    # Draw using PyQtGraph
 
 # Setup the web camera
 def setup_web_camera():
@@ -69,7 +69,7 @@ def main():
     detector, marker_size = setup_aruco()
 
     # Read Dodecahedron 3D coordinates --------------------
-    data = pd.read_csv('model_points.csv')    # Modified annotation (adjusted to each marker)
+    data = pd.read_csv('markers/model_points_4x4.csv')    # Modified annotation (adjusted to each marker)
     row, column = data.shape                        # Check the number of row & column
     # Put data into a 2D-list
     cols_to_combine = ['x', 'y', 'z']
