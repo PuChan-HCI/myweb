@@ -29,7 +29,8 @@ def setup_web_camera():
 # Set up the Aruco 
 def setup_aruco():
     # Set up the Aruco dictionary
-    dictionary = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+    # dictionary = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+    dictionary = aruco.getPredefinedDictionary(aruco.DICT_ARUCO_MIP_36h12)
     parameters = aruco.DetectorParameters()
     # Change below value to match with the actual marker size
     marker_size = 0.014  # in meter
@@ -72,7 +73,8 @@ def main():
     detector, marker_size = setup_aruco()
 
     # Read Dodecahedron 3D coordinates --------------------
-    data = pd.read_csv('markers/model_points_4x4.csv')    # Modified annotation (adjusted to each marker)
+    # data = pd.read_csv('markers/model_points_4x4.csv') 
+    data = pd.read_csv('markers/model_points_MIP_36h12.csv') 
     row, column = data.shape                        # Check the number of row & column
     # Put data into a 2D-list
     cols_to_combine = ['x', 'y', 'z']
