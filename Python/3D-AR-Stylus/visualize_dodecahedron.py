@@ -62,13 +62,6 @@ import numpy as np
 result = np.array(new_list)
 print(result)
 
-# Note
-# The way to "start" the array that you want is:
-# arr = np.empty((0,3), int)
-# Which is an empty array but it has the proper dimensionality.
-# >>> arr
-# array([], shape=(0, 3), dtype=int64)
-
 # -- Labels
 for i in range(row):
     ax.text(data['x'][i], data['y'][i], data['z'][i], data['label'][i])

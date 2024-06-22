@@ -44,10 +44,6 @@ app=QtWidgets.QApplication([])
 win2d= KeyPressWindow(show=True)
 win2d.setWindowTitle("Dodecahedron")
 win2d.sigKeyPress.connect(lambda event: get_key_pressed(keys_mapping[event.key()]))
-
-# win2d = MyWidget()
-# win2d.keyPressed.connect(handleKeyPress)
-
 win2d.resize(1500,750)
 # win2d.setBackground('k')
 # win2d.showFullScreen()
