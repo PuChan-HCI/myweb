@@ -36,15 +36,6 @@ def setup_aruco():
     detector = cv2.aruco.ArucoDetector(dictionary, parameters)
     return detector, marker_size
 
-# Passing graphics from matplotlib to cv images
-def buffer_plot_and_get(figure):
-    buf = io.BytesIO()
-    figure.savefig(buf)
-    buf.seek(0)
-    pil_image = Image.open(buf)
-    opencvImage = cv2.cvtColor(np.array(pil_image), cv2.COLOR_RGB2BGR)
-    return opencvImage
-
 # Estimate the pose information for each marker
 def estimatePoseLocal(corner, marker_size, cameraMatrix, distCoeffs):
     marker_points = np.array([[-marker_size / 2, marker_size / 2, 0],
