@@ -1,6 +1,6 @@
 # Blender 4.1.1
 # www.blender.org
-mtllib Dodecahedron_Aruco.mtl
+mtllib Dodecahedron_MIP_36h12.mtl
 o Solid
 v -0.098955 -0.222960 -0.137978
 v -0.262047 0.051475 -0.084986
