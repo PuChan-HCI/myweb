@@ -5,7 +5,6 @@ from cv2 import aruco
 import numpy as np
 import pandas as pd
 from collections import deque
-import matplotlib.pyplot as plt
 import io
 from PIL import Image
 
@@ -29,8 +28,8 @@ def setup_web_camera():
 # Set up the Aruco 
 def setup_aruco():
     # Set up the Aruco dictionary
-    # dictionary = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
-    dictionary = aruco.getPredefinedDictionary(aruco.DICT_ARUCO_MIP_36h12)
+    dictionary = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+    # dictionary = aruco.getPredefinedDictionary(aruco.DICT_ARUCO_MIP_36h12)
     parameters = aruco.DetectorParameters()
     # Change below value to match with the actual marker size
     marker_size = 0.014  # in meter

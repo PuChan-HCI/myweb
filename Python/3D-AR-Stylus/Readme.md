@@ -9,6 +9,10 @@ Print the dodecahedron.pdf and build a dodecahedron.
 ```
 pip install requirements.txt
 ```
+If you use Anaconda environment, you may do it beforehand
+'''
+conda install wrapt
+'''
 
 ## Run the program
 Show the local & global pose information (use 'space' key to switch between them)
